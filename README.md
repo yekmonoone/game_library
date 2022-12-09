@@ -1,5 +1,8 @@
 # game_library
 2022 Mobile Programming Project
-Erdoğan Baran Hazar /n
-Arda Bozkurt /n 
+<<<<<<< HEAD
+Erdoğan Baran Hazar
+Arda Bozkurt
 Ahmed Harun Aksoy
+=======
+>>>>>>> parent of 318a688 (initial commit)
