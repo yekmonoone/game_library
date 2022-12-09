@@ -8,10 +8,11 @@
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/drawable/games.xml" value="0.2515" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2515" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/drawable/icon.xml" value="0.2515" />
+        <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/drawable/searchview_background.xml" value="0.2585" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/drawable/vector.xml" value="0.2515" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/layout/activity_main.xml" value="0.2210144927536232" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/layout/fragment_favorites.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/layout/fragment_games.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/layout/fragment_games.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/game_library/app/src/main/res/menu/bottom_nav_bar.xml" value="0.253125" />
       </map>
     </option>
