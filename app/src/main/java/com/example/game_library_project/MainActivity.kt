@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.games_layout,fragment)
+        fragmentTransaction.replace(R.id.mainFrameLayout,fragment)
         fragmentTransaction.commit()
 
     }
