@@ -15,28 +15,45 @@
         android:layout_height="wrap_content"
         android:text="Games"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/searchView"
+        app:layout_constraintBottom_toTopOf="@+id/insideLayout"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#000000"
 
-    <SearchView
-        android:id="@+id/searchView"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/insideLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/searchview_background"
-
-        android:iconifiedByDefault="false"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="Search for the games"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        android:layout_height="48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/insidelayout_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@id/textView">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="343dp"
+            android:layout_height="36dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/searchview_background"
+            android:gravity="center"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/transparent"
+            android:queryHint="Search for the games"
+
+            app:layout_constraintBottom_toBottomOf="@id/insideLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/insideLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -44,7 +61,7 @@
         android:layout_height="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        app:layout_constraintTop_toBottomOf="@+id/insideLayout"
         tools:listitem="@layout/recyclerview_item_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
