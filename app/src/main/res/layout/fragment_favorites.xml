@@ -18,7 +18,7 @@
 
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:text="Favorited"
+        android:text="Favourites"
 
         android:textColor="@color/black"
         android:textSize="34sp"

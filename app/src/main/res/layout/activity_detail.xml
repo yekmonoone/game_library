@@ -23,12 +23,13 @@
     <TextView
         android:id="@+id/textViewDetail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-medium"
         android:lineSpacingExtra="-3sp"
         android:text="fıfa"
-        android:textAllCaps="true"
 
+        android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -36,36 +37,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageViewDetail" />
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="411dp"
-        android:layout_height="75dp"
-        android:gravity="center"
+        android:layout_height="81dp"
+
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="start"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="asdasdasdasdasdadfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsdasdasda"
+        android:textColor="#313131"
         android:textSize="10sp"
-
-        android:text="asdasdasdasdasdasdasdasda"
         app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GameDescriptionText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/GameDescriptionText"
+        app:lineHeight="35px"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/redditView"
         android:layout_width="411dp"
-        android:layout_height="75dp"
+        android:layout_height="54dp"
+        android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
-        android:paddingLeft="16dp"
 
-        android:textSize="17sp"
+        android:paddingLeft="16dp"
         android:text="visit reddit"
+        android:textColor="#313131"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-         />
+        app:lineHeight="22px" />
 
     <View
         android:id="@+id/divider"
@@ -103,29 +110,35 @@
     <TextView
         android:id="@+id/websiteView"
         android:layout_width="411dp"
-        android:layout_height="75dp"
+        android:layout_height="54dp"
+        android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
-        android:textSize="17sp"
 
         android:paddingLeft="16dp"
         android:text="visit website"
+        android:textColor="#313131"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/divider2"
-        app:layout_constraintTop_toBottomOf="@id/divider2" />
+        app:layout_constraintTop_toBottomOf="@id/divider2"
+        app:lineHeight="22px" />
 
     <TextView
         android:id="@+id/GameDescriptionText"
         android:layout_width="140dp"
-        android:layout_height="33dp"
-        android:gravity="center"
-        android:text="Game Description"
+        android:layout_height="21dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="Game Description"
+        android:textColor="#313131"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDetail"
+        app:lineHeight="22px" />
 
     <Button
         android:id="@+id/button2"

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.game_library_project.databinding.RecyclerviewItemLayoutBinding
 
@@ -47,6 +48,7 @@ class Adapter(val gameList : ArrayList<GamesInfo>) : RecyclerView.Adapter<Adapte
     override fun getItemCount(): Int {
         return gameList.size
     }
+
 
 
 
