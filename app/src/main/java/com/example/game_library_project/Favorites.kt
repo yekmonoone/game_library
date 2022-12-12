@@ -5,55 +5,51 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_favorites.view.*
+import kotlinx.android.synthetic.main.fragment_games.view.*
+import kotlinx.android.synthetic.main.fragment_games.view.recyclerView
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Favorites.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Favorites : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
+
+
+        val  favoritedGamesArrayList = ArrayList<GamesInfo>()
+
+        val gta4 = GamesInfo(R.drawable.gta_5,"Grand Theft Auto 4", 96, "Action, Shooter",getString(R.string.gtaV))
+       favoritedGamesArrayList.add(gta4)
+
+
+
+        val view = inflater.inflate(R.layout.fragment_favorites,container,false)
+        view.recyclerView.layoutManager = LinearLayoutManager(context)
+        view.recyclerView.adapter = Adapter(favoritedGamesArrayList)
+        val size : Int = favoritedGamesArrayList.size
+        view.favoritedNumber.text = "($size)"
+        if (favoritedGamesArrayList.isEmpty()){
+            view.noFavorited.visibility = View.VISIBLE
+            view.favoritedNumber.visibility = View.INVISIBLE
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorites, container, false)
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Favorites.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Favorites().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+
+
     }
-}
+
+

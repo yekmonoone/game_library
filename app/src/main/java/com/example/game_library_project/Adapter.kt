@@ -1,7 +1,7 @@
 package com.example.game_library_project
 
 
-import android.graphics.Color
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,49 +10,14 @@ import com.example.game_library_project.databinding.RecyclerviewItemLayoutBindin
 
 class Adapter(val gameList : ArrayList<GamesInfo>) : RecyclerView.Adapter<Adapter.GameHolder>(){
 
-
-    /*
-
-    CLICK LISTENER
-    private lateinit var mListener: onGameClickListener
-
-
-    interface onGameClickListener{
-
-        fun onGameClick(position: Int)
-
-
-    }
-
-    fun setOnGameClickListener(listener: onGameClickListener){
-
-        mListener = listener
-
-    }
-    */
-
-
-
-    class GameHolder(val binding: RecyclerviewItemLayoutBinding/*,listener: onGameClickListener*/) : RecyclerView.ViewHolder(binding.root){
-
-        /*init {
-
-            itemView.setOnClickListener {
-                listener.onGameClick(adapterPosition)
-            }
-
-        }
-
-         */
+    class GameHolder(val binding: RecyclerviewItemLayoutBinding) : RecyclerView.ViewHolder(binding.root){
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameHolder {
         val binding = RecyclerviewItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return GameHolder(binding/*,mListener*/)
+        return GameHolder(binding)
     }
-
-        //private var row_index = -1
 
     override fun onBindViewHolder(holder: GameHolder, position: Int) {
 
@@ -64,14 +29,18 @@ class Adapter(val gameList : ArrayList<GamesInfo>) : RecyclerView.Adapter<Adapte
         holder.binding.genre.text = gameList.get(position).genre
 
 
-        /*if (row_index === position) {
-            holder.itemView.setBackgroundColor(Color.parseColor("#E0E0E0"))
-        } else {
-            holder.itemView.setBackgroundColor(Color.parseColor("#ffffff"))
+
+        holder.itemView.setOnClickListener{
+            //tıklandıgı zaman renk degistirme
+            holder.binding.cardview.setBackgroundColor(0x1F8E8E93)
+
+            val intent = Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("gameInfo",gameList.get(position))
+            holder.itemView.context.startActivity(intent)
+            //finish yapmamız gerekiyo mu?
+
+
         }
-
-         */
-
 
     }
 
