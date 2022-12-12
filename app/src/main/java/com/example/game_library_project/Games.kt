@@ -36,16 +36,17 @@ class Games : Fragment() {
 
         val gamesArrayList = ArrayList<GamesInfo>()
         val displaylist = ArrayList<GamesInfo>()
-        val gtaV = GamesInfo(R.drawable.gta_5,"Grand Theft Auto V", 96, "Action, Shooter")
-        val fifa = GamesInfo(R.drawable.portal2,"Portal 2", 95, "Action, Puzzle")
-        val witcher = GamesInfo(R.drawable.witcher, "The Witcher 3: Wild Hunt", 89, "Action, Puzzle")
-        val pes = GamesInfo(R.drawable.left4dead2,"Left 4 Dead 2", 89, "Action, Puzzle")
+        val gtaV = GamesInfo(R.drawable.gta_5,"gtaV", 96, "Action, Shooter",getString(R.string.gtaV))
+        val portal2 = GamesInfo(R.drawable.portal2,"Portal2", 95, "Action, Puzzle",getString(R.string.portal2))
+        val witcher = GamesInfo(R.drawable.witcher, "The Witcher 3: Wild Hunt", 89, "Action, Puzzle",getString(R.string.witcher))
+        val left4dead2 = GamesInfo(R.drawable.left4dead2,"Left4Dead2", 89, "Action, Puzzle",getString(R.string.left4dead2))
 
         gamesArrayList.add(gtaV)
-        gamesArrayList.add(fifa)
+        gamesArrayList.add(portal2)
         gamesArrayList.add(witcher)
-        gamesArrayList.add(pes)
+        gamesArrayList.add(left4dead2)
         displaylist.addAll(gamesArrayList)
+
 
         val view = inflater.inflate(R.layout.fragment_games,container,false)
         view.recyclerView.layoutManager = LinearLayoutManager(context)
@@ -144,5 +145,6 @@ class Games : Fragment() {
         recyclerView.adapter = adapter
         */
     }
+
 
 }
