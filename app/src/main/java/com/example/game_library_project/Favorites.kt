@@ -28,8 +28,8 @@ class Favorites : Fragment() {
 
         val  favoritedGamesArrayList = ArrayList<GamesInfo>()
 
-        val gta4 = GamesInfo(R.drawable.gta_5,"Grand Theft Auto 4", 96, "Action, Shooter",getString(R.string.gtaV))
-       favoritedGamesArrayList.add(gta4)
+        val gta5 = GamesInfo(R.drawable.gta_5,"Grand Theft Auto V", 96, "Action, Shooter",getString(R.string.gtaV))
+       favoritedGamesArrayList.add(gta5)
 
 
 

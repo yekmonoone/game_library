@@ -4,10 +4,6 @@
     <item android:title="Games"
         android:id="@+id/games"
         android:icon="@drawable/games"
-        
-
-
-
 
         />
     <item android:title="Favorites"

@@ -26,11 +26,13 @@
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="sans-serif-medium"
+        android:layout_marginVertical="16sp"
         android:lineSpacingExtra="-3sp"
-        android:text="fıfa"
-
+        android:text="Grand Theft Auto V"
+        android:gravity="right|top"
         android:textAllCaps="true"
         android:textColor="@color/white"
+        android:letterSpacing="0.01"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewDetail"
@@ -42,18 +44,19 @@
         android:id="@+id/textView2"
         android:layout_width="411dp"
         android:layout_height="81dp"
-
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:letterSpacing="-0.04"
         android:gravity="start"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:text="asdasdasdasdasdadfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsdasdasda"
+        android:paddingRight="22dp"
+        android:text="asdffffffffffffffffffffffffsdasdasda"
         android:textColor="#313131"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/GameDescriptionText"
-        app:lineHeight="35px"
+        app:lineHeight="22sp"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
@@ -62,7 +65,6 @@
         android:layout_height="54dp"
         android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
-
         android:paddingLeft="16dp"
         android:text="visit reddit"
         android:textColor="#313131"
@@ -113,7 +115,6 @@
         android:layout_height="54dp"
         android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
-
         android:paddingLeft="16dp"
         android:text="visit website"
         android:textColor="#313131"
@@ -146,7 +147,7 @@
         android:layout_height="wrap_content"
 
         android:onClick="buttonClick"
-        android:text="add favorite"
+        android:text="Favorite"
         android:outlineAmbientShadowColor="@color/beyazGriTon"
         android:outlineSpotShadowColor="@color/beyazGriTon"
         android:backgroundTint="@color/beyazGriTon"
