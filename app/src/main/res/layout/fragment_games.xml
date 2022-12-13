@@ -14,11 +14,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="38dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="264dp"
+        android:layout_marginBottom="9dp"
         android:text="Games"
+        android:textStyle="bold"
         android:textColor="#000000"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/insideLayout"
@@ -49,7 +50,6 @@
             android:iconifiedByDefault="false"
             android:queryBackground="@android:color/transparent"
             android:queryHint="Search for the games"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,12 +60,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="500dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/insideLayout"
         tools:listitem="@layout/recyclerview_item_layout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
