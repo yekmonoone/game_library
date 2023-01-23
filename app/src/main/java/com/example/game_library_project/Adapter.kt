@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.game_library_project.databinding.RecyclerviewItemLayoutBinding
+import com.squareup.picasso.Picasso
 
 class Adapter(val gameList : ArrayList<GamesInfo>) : RecyclerView.Adapter<Adapter.GameHolder>(){
 
@@ -24,7 +25,7 @@ class Adapter(val gameList : ArrayList<GamesInfo>) : RecyclerView.Adapter<Adapte
 
         //game detail kısmına gitmek için
         //val intent = Intent(holder.itemView.context, detailedgame....::class.java)
-        holder.binding.gameImage.setImageResource(gameList.get(position).gameImage)
+        Picasso.get().load(gameList.get(position).gameImage).into(holder.binding.gameImage)
         holder.binding.gameName.text = gameList.get(position).gameName
         holder.binding.score.text = gameList.get(position).score.toString()
         holder.binding.genre.text = gameList.get(position).genre
