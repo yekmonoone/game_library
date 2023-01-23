@@ -1,12 +1,18 @@
 package com.example.game_library_project
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.game_library_project.databinding.FragmentGamesBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -27,11 +33,86 @@ class Games : Fragment() {
     override fun onViewCreated(
         view: View, savedInstanceState: Bundle?
     ) {
+        println(8)
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("https://api.rawg.io/api/")
+                .addConverterFactory (GsonConverterFactory.create())
+                .build()
+        println(9)
 
+        val api:Api = retrofit.create(Api::class.java)
+        val call: Call<JSON> = api.getgames("3be8af6ebf124ffe81d90f514e59856c")
+        displaylist = arrayListOf<GamesInfo>()
         gamesArrayList = arrayListOf<GamesInfo>()
 
+        call.enqueue(object: Callback<JSON> {
 
-        val gtaV = GamesInfo(
+            override fun onResponse (call: Call<JSON>, response: Response<JSON>) {
+                if (response.isSuccessful) {
+                    val gameList = response.body()?.results
+
+                    var datagameList = ArrayList(gameList)
+
+                    for (dataresult in datagameList){
+
+
+                        val retrofitv2: Retrofit = Retrofit.Builder()
+                            .baseUrl("https://api.rawg.io/api/")
+                            .addConverterFactory (GsonConverterFactory.create())
+                            .build()
+
+                        val apiv2 :Api = retrofitv2.create(Api::class.java)
+                        val callv2: Call<JSONDETAILS> = apiv2.getGameDescription(dataresult.id, "3be8af6ebf124ffe81d90f514e59856c")
+
+                        callv2.enqueue(object: Callback<JSONDETAILS>{
+                            override fun onResponse(call: Call<JSONDETAILS>, response: Response<JSONDETAILS>) {
+
+                                if (response.isSuccessful) {
+
+                                    val description = response.body()?.description!!
+                                    val website = response.body()?.website!!
+                                    val reddit = response.body()?.reddit_url!!
+                                    val genres = dataresult.genres
+                                    var genretypes = ""
+                                    for (genre in genres) {
+                                        genretypes = genretypes + genre.name + ","
+                                    }
+                                    val game = GamesInfo(
+                                        dataresult.background_image,
+                                        dataresult.name,
+                                        dataresult.metacritic,
+                                        genretypes,
+                                        description,
+                                        website,
+                                        reddit
+                                    )
+                                    gamesArrayList.add(game)
+                                    displaylist.add(game)
+                                }
+                                adapter.notifyDataSetChanged()
+                            }
+                            override fun onFailure(call: Call<JSONDETAILS>, t: Throwable) {
+                                // handle failure
+                            }
+                        })
+                    }
+                    adapter.notifyDataSetChanged()
+                } else {
+                    // Handle error
+                    println(4)
+                    Log.e("API Call Error", "Error code: ${response.code()}")
+                }
+            }
+            override fun onFailure(call: Call<JSON>, t: Throwable) {
+                TODO("Not yet implemented")
+                println(5)
+            }
+        })
+
+
+
+
+        /*val gtaV = GamesInfo(
             R.drawable.gta_5,
             "Grand Theft Auto V",
             96,
@@ -72,8 +153,10 @@ class Games : Fragment() {
         gamesArrayList.add(witcher)
         gamesArrayList.add(left4dead2)
         gamesArrayList.add(left4dead1)
-        displaylist = arrayListOf<GamesInfo>()
-        displaylist.addAll(gamesArrayList)
+         */
+
+        //displaylist.addAll(gamesArrayList)
+
 
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.recyclerView)

@@ -43,8 +43,9 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="411dp"
-        android:layout_height="81dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:ellipsize="end"
         android:fontFamily="sans-serif"
         android:letterSpacing="-0.04"
         android:gravity="start"
